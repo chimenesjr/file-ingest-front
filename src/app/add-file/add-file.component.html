@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12">
+      <h1>
+      Start the file Ingestion
+    </h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-xs-12">
+    <div class="col-md-2">Context name</div>
+    <div class="col-md-3">
+      <input type="text" name="context-name" id="context-name" value="{{fileIngest.context-name}}">
+      <h1>{{fileIngest.context-name}}</h1>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div class="col-md-2">Time to hold</div>
+    <div class="col-md-3">
+      <input type="text" name="time_to_hold" id="context-name">
+    </div>
+  </div>
+  <div class="col-xs-12 btn-group">
+    <div class="col-md-2">
+      <button type="button" class="btn btn-primary" (click)="onFileSubmit()">Submit</button>
+    </div>
+  </div>
+</div>
