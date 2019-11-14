@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FileService } from './file.service';
 import { FileIngest } from '../model/file-ingest.model';
 
@@ -10,15 +10,18 @@ import { FileIngest } from '../model/file-ingest.model';
 })
 export class AddFileComponent implements OnInit {
   
-  fileIngest: FileIngest;
+  @ViewChild('contextName') contextNameRef: ElementRef;
+  @ViewChild('timeToHold') timeToHoldRef: ElementRef;
 
   constructor(private fileService: FileService) { }
 
   ngOnInit() {
-    this.fileIngest = new FileIngest();
   }
 
   onFileSubmit(){
-    this.fileService.IngestFile(this.fileIngest);
+    var file = new FileIngest();
+    file.context = this.contextNameRef.nativeElement.value;
+    file.time_to_hold = this.timeToHoldRef.nativeElement.value;
+    this.fileService.IngestFile(file);
   }
 }
