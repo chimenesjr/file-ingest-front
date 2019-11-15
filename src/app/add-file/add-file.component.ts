@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output } from '@angular/core';
 import { FileService } from './file.service';
 import { FileIngest } from '../model/file-ingest.model';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-add-file',
@@ -8,6 +9,7 @@ import { FileIngest } from '../model/file-ingest.model';
   styleUrls: ['./add-file.component.css'],
   providers:[FileService]
 })
+
 export class AddFileComponent implements OnInit {
   
   @ViewChild('contextName') contextNameRef: ElementRef;

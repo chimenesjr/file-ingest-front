@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileIngest } from '../model/file-ingest.model';
+import { FileService } from '../add-file/file.service';
 
 @Component({
   selector: 'app-list-files',
@@ -8,14 +9,18 @@ import { FileIngest } from '../model/file-ingest.model';
 })
 export class ListFilesComponent implements OnInit {
 
-  sentFiles : FileIngest[]= [
-    new FileIngest("test1", 1),
-    new FileIngest("test2", 2)
-  ];
+  sentFiles : FileIngest[];
 
-  constructor() { }
+  constructor(private slFileService: FileService) { }
 
   ngOnInit() {
+    this.sentFiles = this.slFileService.GetFiles();
+    this.slFileService.filesChanged
+    .subscribe(
+      (files: FileIngest[]) => {
+        this.sentFiles = files;
+      }
+    );
   }
 
 }

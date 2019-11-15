@@ -6,5 +6,4 @@ export class FileIngest extends IFileIngest {
     public fileTypeEnum : FileTypeEnum
 
     
-    
 }
