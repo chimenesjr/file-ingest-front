@@ -1,13 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, Output } from '@angular/core';
-import { FileService } from './file.service';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FileIngest } from '../model/file-ingest.model';
-import { EventEmitter } from 'events';
+import { FileIngestService } from '../services/file-ingest.service';
 
 @Component({
   selector: 'app-add-file',
   templateUrl: './add-file.component.html',
   styleUrls: ['./add-file.component.css'],
-  providers:[FileService]
 })
 
 export class AddFileComponent implements OnInit {
@@ -15,7 +13,7 @@ export class AddFileComponent implements OnInit {
   @ViewChild('contextName') contextNameRef: ElementRef;
   @ViewChild('timeToHold') timeToHoldRef: ElementRef;
 
-  constructor(private fileService: FileService) { }
+  constructor(private fileService: FileIngestService) { }
 
   ngOnInit() {
   }
