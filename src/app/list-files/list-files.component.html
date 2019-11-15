@@ -1,6 +1,12 @@
-<h1>Sent Files</h1>
-<ul>
-  <li *ngFor="let file of sentFiles">
+<div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3>
+          Sent Files
+      </h3>
+    </div>
+  </div>
+<ul class="list-group">
+  <li *ngFor="let file of sentFiles" class="list-group-item">
     {{file.context}}
   </li>
 </ul>
