@@ -8,18 +8,22 @@ import { FileIngestService } from './services/file-ingest.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddFileReactComponent } from './add-file-react/add-file-react.component';
+import { HttpClientModule } from "@angular/common/http";
+import { IsLiveComponent } from './is-live/is-live.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddFileComponent,
     ListFilesComponent,
-    AddFileReactComponent
+    AddFileReactComponent,
+    IsLiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [FileIngestService],
   bootstrap: [AppComponent]
