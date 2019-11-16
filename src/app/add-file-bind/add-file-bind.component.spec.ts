@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddFileComponent } from './add-file.component';
+import { AddFileComponent } from './add-file-bind.component';
 
 describe('AddFileComponent', () => {
   let component: AddFileComponent;

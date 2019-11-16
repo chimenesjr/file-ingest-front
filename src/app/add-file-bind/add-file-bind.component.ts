@@ -3,9 +3,9 @@ import { FileIngest } from '../model/file-ingest.model';
 import { FileIngestService } from '../services/file-ingest.service';
 
 @Component({
-  selector: 'app-add-file',
-  templateUrl: './add-file.component.html',
-  styleUrls: ['./add-file.component.css'],
+  selector: 'app-add-file-bind',
+  templateUrl: './add-file-bind.component.html',
+  styleUrls: ['./add-file-bind.component.css'],
 })
 
 export class AddFileComponent implements OnInit {
