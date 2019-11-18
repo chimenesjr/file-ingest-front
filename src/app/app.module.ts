@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddFileReactComponent } from './add-file-react/add-file-react.component';
 import { HttpClientModule } from "@angular/common/http";
 import { IsLiveComponent } from './is-live/is-live.component';
+import { HttpFileIngestService } from './services/http-file-ingest.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { IsLiveComponent } from './is-live/is-live.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [FileIngestService],
+  providers: [FileIngestService, HttpFileIngestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

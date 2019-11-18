@@ -1,6 +1,8 @@
 import { FileIngest } from "../model/file-ingest.model";
-import { EventEmitter } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
+import { HttpFileIngestService } from "./http-file-ingest.service";
 
+@Injectable({providedIn: 'root'})
 export class FileIngestService {
 
     public filesChanged = new EventEmitter<FileIngest[]>();
@@ -10,9 +12,25 @@ export class FileIngestService {
         new FileIngest("test2", 2)
     ];
 
+    constructor(private httpFileIngest: HttpFileIngestService){}
+
     IngestFile(fileIngest: FileIngest) {
-        this.sentFiles.push(fileIngest);
-        this.filesChanged.emit(this.sentFiles.slice());
+
+        this.httpFileIngest.IngestFile(fileIngest).subscribe(
+            (response: FileIngest) => {
+                if(response != null)
+                {
+                    this.sentFiles.push(response);
+                    this.filesChanged.emit(this.sentFiles.slice());
+                }
+                else{
+
+                }
+            },
+            error => {
+
+            }
+        )
     }
 
     GetFiles() {

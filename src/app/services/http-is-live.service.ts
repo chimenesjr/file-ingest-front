@@ -24,6 +24,6 @@ export class HttpIsLiveService {
             error => { 
                 this.statusChanged.next(false) 
             }
-            );
+        );
     }
 }
