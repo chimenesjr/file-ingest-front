@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { FileIngest } from "../model/file-ingest.model";
 import { Subject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { IFileIngest } from "../model/interface-file-ingest-model";
 
 @Injectable({providedIn: 'root'})
 export class HttpFileIngestService  {
@@ -11,11 +11,11 @@ export class HttpFileIngestService  {
 
     }
 
-    IngestFile (file: FileIngest) : Observable<FileIngest>  {
-        return this.http.post<FileIngest>('http://localhost:8080/ingestfile', file, {responseType: 'json'})
+    IngestFile (file: IFileIngest) : Observable<IFileIngest>  {
+        return this.http.post<IFileIngest>('http://localhost:8080/ingestfile', file)
         .pipe(
             map(
-                (response: FileIngest) => {
+                (response: IFileIngest) => {
                     return response;
                 },
                 error => {

@@ -34,9 +34,14 @@ export class AddFileReactComponent implements OnInit {
     }
 
     var file = new FileIngest();
-    file.ContextName = this.registerForm.value.context;
+    file.contextName = this.registerForm.value.context;
     file.time_to_hold = this.registerForm.value.time_to_hold;
     this.fileService.IngestFile(file);
+
+    this.clearForm();
   }
 
+  clearForm(){
+    this.registerForm.reset()
+  }
 }

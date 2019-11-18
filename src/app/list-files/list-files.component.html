@@ -5,8 +5,10 @@
       </h3>
     </div>
   </div>
-<ul class="list-group">
-  <li *ngFor="let file of sentFiles" class="list-group-item">
-    {{file.ContextName}}
-  </li>
-</ul>
+
+<div class="row" *ngFor="let file of sentFiles">
+  <div class="col-md-2">{{file.contextName}}</div>
+  <div class="col-md-5">{{file.id}}</div>
+  <div class="col-md-4">{{file.created  | date: 'dd/MM/yyyy HH:mm:ss'}}</div>
+  <div class="col-md-1">{{file.time_to_hold}}</div>
+</div>

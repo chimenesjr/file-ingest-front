@@ -20,7 +20,7 @@ export class AddFileComponent implements OnInit {
 
   onFileSubmit(){
     var file = new FileIngest();
-    file.ContextName = this.contextNameRef.nativeElement.value;
+    file.contextName = this.contextNameRef.nativeElement.value;
     file.time_to_hold = this.timeToHoldRef.nativeElement.value;
     this.fileService.IngestFile(file);
   }

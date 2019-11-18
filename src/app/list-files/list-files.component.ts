@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FileIngest } from '../model/file-ingest.model';
 import { FileIngestService } from '../services/file-ingest.service';
+import { FileTypeEnum } from "../model/file-type-enum";
+import { IFileIngest } from '../model/interface-file-ingest-model';
 
 @Component({
   selector: 'app-list-files',
@@ -9,7 +11,7 @@ import { FileIngestService } from '../services/file-ingest.service';
 })
 export class ListFilesComponent implements OnInit {
 
-  sentFiles : FileIngest[];
+  sentFiles : IFileIngest[];
   constructor(private slFileService: FileIngestService) { }
 
   ngOnInit() {
