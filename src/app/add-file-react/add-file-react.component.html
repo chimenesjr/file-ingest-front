@@ -9,28 +9,32 @@
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="context">Context Name</label>
-          <input    type="text" 
-                    formControlName="context" 
-                    class="form-control" 
-                    placeholder="Context name"
-                    [ngClass]="{ 'is-invalid': submitted && f.context.errors }"
-                    required>
-          <div *ngIf="submitted && f.context.errors" class="invalid-feedback">
-              <div *ngIf="f.context.errors.required">Context Name is required</div>
-          </div>
+        <input    type="text" 
+                  formControlName="context" 
+                  class="form-control" 
+                  placeholder="Context name"
+                  [ngClass]="{ 'is-invalid': submitted && f.context.errors }"
+                  required>
+        <div *ngIf="submitted && f.context.errors" class="invalid-feedback">
+            <div *ngIf="f.context.errors.required">Context Name is required</div>
+        </div>
       </div>
       <div class="form-group">
-          <label for="context">Time to hold</label>
-            <input    type="number" 
-                      formControlName="time_to_hold" 
-                      class="form-control" 
-                      placeholder="Time to hold"
-                      [ngClass]="{ 'is-invalid': submitted && f.time_to_hold.errors }"
-                      required>
-            <div *ngIf="submitted && f.time_to_hold.errors" class="invalid-feedback">
-                <div *ngIf="f.time_to_hold.errors.required">Time to hold is required</div>
-            </div>
+        <label for="context">Time to hold</label>
+        <input    type="number" 
+                  formControlName="time_to_hold" 
+                  class="form-control" 
+                  placeholder="Time to hold"
+                  [ngClass]="{ 'is-invalid': submitted && f.time_to_hold.errors }"
+                  required>
+        <div *ngIf="submitted && f.time_to_hold.errors" class="invalid-feedback">
+            <div *ngIf="f.time_to_hold.errors.required">Time to hold is required</div>
         </div>
+      </div>
+      <div class="form-group">
+        <label for="context">Type</label>
+        
+      </div>
       <div class="row">
         <button [disabled]="loading" class="btn btn-lg btn-primary btn-block">Submit</button>
       </div>

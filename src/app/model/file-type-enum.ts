@@ -1,4 +1,4 @@
 export enum FileTypeEnum{
-    Snake,
-    Tiger
+    Snake = 0,
+    Tiger = 1
 }

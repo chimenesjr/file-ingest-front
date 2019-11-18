@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FileIngest } from '../model/file-ingest.model';
 import { FileIngestService } from '../services/file-ingest.service';
+import { IFileIngest } from '../model/interface-file-ingest-model';
 
 @Component({
   selector: 'app-add-file-bind',
@@ -19,7 +19,7 @@ export class AddFileComponent implements OnInit {
   }
 
   onFileSubmit(){
-    var file = new FileIngest();
+    var file = new IFileIngest();
     file.contextName = this.contextNameRef.nativeElement.value;
     file.time_to_hold = this.timeToHoldRef.nativeElement.value;
     this.fileService.IngestFile(file);

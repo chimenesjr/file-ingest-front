@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FileIngest } from '../model/file-ingest.model';
 import { FileIngestService } from '../services/file-ingest.service';
+import { IFileIngest } from '../model/interface-file-ingest-model';
 
 @Component({
   selector: 'app-add-file-react',
@@ -33,7 +33,7 @@ export class AddFileReactComponent implements OnInit {
         return;
     }
 
-    var file = new FileIngest();
+    var file = new IFileIngest();
     file.contextName = this.registerForm.value.context;
     file.time_to_hold = this.registerForm.value.time_to_hold;
     this.fileService.IngestFile(file);

@@ -1,4 +1,3 @@
-import { FileIngest } from "../model/file-ingest.model";
 import { EventEmitter, Injectable } from "@angular/core";
 import { HttpFileIngestService } from "./http-file-ingest.service";
 import { IFileIngest } from "../model/interface-file-ingest-model";
@@ -12,10 +11,10 @@ export class FileIngestService {
 
     constructor(private httpFileIngest: HttpFileIngestService){}
 
-    IngestFile(fileIngest: FileIngest) {
+    IngestFile(fileIngest: IFileIngest) {
 
         this.httpFileIngest.IngestFile(fileIngest).subscribe(
-            (response: FileIngest) => {
+            (response: IFileIngest) => {
                 if(response != null)
                 {
                     this.sentFiles.push(response);

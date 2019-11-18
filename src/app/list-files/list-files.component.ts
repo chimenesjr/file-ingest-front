@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { FileIngest } from '../model/file-ingest.model';
 import { FileIngestService } from '../services/file-ingest.service';
 import { FileTypeEnum } from "../model/file-type-enum";
 import { IFileIngest } from '../model/interface-file-ingest-model';
@@ -23,5 +22,9 @@ export class ListFilesComponent implements OnInit {
         this.sentFiles = files;
       }
     );
+  }
+
+  getTypeName (type:number){
+    return FileTypeEnum[type];
   }
 }

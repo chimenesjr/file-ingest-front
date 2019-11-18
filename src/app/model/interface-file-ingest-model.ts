@@ -1,9 +1,11 @@
+import { FileTypeEnum } from "./file-type-enum";
+
 export class IFileIngest{
 
     public id: string;
     public contextName: string;
     public time_to_hold: number;
-    public type: string;
+    public type: FileTypeEnum;
     public created: Date;
     public finish: Date;
     

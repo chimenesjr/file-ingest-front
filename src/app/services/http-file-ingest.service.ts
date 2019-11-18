@@ -12,7 +12,7 @@ export class HttpFileIngestService  {
     }
 
     IngestFile (file: IFileIngest) : Observable<IFileIngest>  {
-        return this.http.post<IFileIngest>('http://localhost:8080/ingestfile', file)
+        return this.http.post<IFileIngest>('http://localhost:8080/ingestfile/tiger', file)
         .pipe(
             map(
                 (response: IFileIngest) => {
