@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { IFileIngest } from "../model/interface-file-ingest-model";
 import { FileTypeEnum } from "../model/file-type-enum";
+import { environment } from './../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class HttpFileIngestService  {
@@ -13,8 +14,7 @@ export class HttpFileIngestService  {
     }
 
     IngestFile (file: IFileIngest) : Observable<IFileIngest>  {
-        
-        return this.http.post<IFileIngest>(`http://localhost:8080/ingestfile/${FileTypeEnum[file.type]}`, file)
+        return this.http.post<IFileIngest>(`${environment.apiUrl}/ingestfile/${FileTypeEnum[file.type]}`, file)
         .pipe(
             map(
                 (response: IFileIngest) => {

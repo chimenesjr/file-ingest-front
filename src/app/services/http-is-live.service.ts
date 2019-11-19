@@ -1,7 +1,8 @@
 import { Injectable, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Subject, timer } from "rxjs";
-import { switchMap, takeUntil, catchError } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
+
 
 @Injectable({providedIn: 'root'})
 export class HttpIsLiveService {
@@ -15,7 +16,7 @@ export class HttpIsLiveService {
 
     CheckStatus(){
 
-        this.http.get('http://localhost:8080/islive', {responseType: 'text'})
+        this.http.get(`${environment.apiUrl}/islive`, {responseType: 'text'})
         .subscribe(
             (response: string) => {
                 this.statusChanged.next(response == 'is live OK');

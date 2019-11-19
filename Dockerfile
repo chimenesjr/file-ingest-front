@@ -16,9 +16,9 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install
 RUN npm install -g @angular/cli@7.3.9
+RUN npm install rxjs@6.0.0 --save
 
 # add app
 COPY . /app
 
-# start app
-CMD ng serve --host 0.0.0.0
+CMD ng serve --prod --configuration=production
