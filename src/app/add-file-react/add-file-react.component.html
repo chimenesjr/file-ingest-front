@@ -33,7 +33,10 @@
       </div>
       <div class="form-group">
         <label for="context">Type</label>
-        
+        <select formControlName="type" class="form-control" >
+          <option [value]="0" selected="true">Snake</option>
+          <option [value]="1">Tiger</option>
+        </select>
       </div>
       <div class="row">
         <button [disabled]="loading" class="btn btn-lg btn-primary btn-block">Submit</button>

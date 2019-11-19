@@ -18,7 +18,8 @@ export class AddFileReactComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       context: ['', Validators.required],
-      time_to_hold: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]]
+      time_to_hold: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]],
+      type: ['', Validators.required]
     });
   }
 
@@ -36,6 +37,7 @@ export class AddFileReactComponent implements OnInit {
     var file = new IFileIngest();
     file.contextName = this.registerForm.value.context;
     file.time_to_hold = this.registerForm.value.time_to_hold;
+    file.type = this.registerForm.value.type;
     this.fileService.IngestFile(file);
 
     this.clearForm();
