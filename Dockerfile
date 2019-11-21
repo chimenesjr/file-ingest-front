@@ -20,6 +20,4 @@ RUN npm install -g @angular/cli@7.3.9
 # add app
 COPY . /app
 
-CMD ng serve --host 0.0.0.0 --prod --configuration=production
-
-EXPOSE 4200
+CMD ng serve --host 0.0.0.0 --port 5001 --prod --configuration=production
