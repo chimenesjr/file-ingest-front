@@ -8,6 +8,8 @@ export class IFileIngest{
     public type: FileTypeEnum;
     public created: Date;
     public finish: Date;
+    public length: number;
+    public is_bengal: boolean;
     
     constructor (context?: string, time_to_hold?: number){
         this.contextName = context;

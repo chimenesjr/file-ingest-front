@@ -8,15 +8,21 @@
 
 <div class="row header" *ngIf="sentFiles.length > 0">
   <div class="col-md-2">Context Name</div>
-  <div class="col-md-5">Id</div>
+  <div class="col-md-4">Id</div>
   <div class="col-md-3">Created</div>
   <div class="col-md-1">Hold</div>
-  <div class="col-md-1">Type</div>
+  <div class="col-md-2">Type</div>
 </div>
 <div class="row" *ngFor="let file of sentFiles">
   <div class="col-md-2">{{file.contextName}}</div>
-  <div class="col-md-5">{{file.id}}</div>
+  <div class="col-md-4">{{file.id}}</div>
   <div class="col-md-3">{{file.created  | date: 'dd/MM/yyyy HH:mm:ss'}}</div>
   <div class="col-md-1">{{file.time_to_hold}}</div>
-  <div class="col-md-1">{{getTypeName(file.type)}}</div>
+  <div class="col-md-2">
+    {{getTypeName(file.type)}}
+    {{file.length}}
+    {{file.is_bengal}}
+    {{file.type == 0 ? file.length : ''}}
+    {{file.type == 1 ? file.is_bengal : ''}}
+  </div>
 </div>

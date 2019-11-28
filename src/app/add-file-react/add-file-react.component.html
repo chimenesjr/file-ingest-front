@@ -38,6 +38,19 @@
           <option [value]="1">Tiger</option>
         </select>
       </div>
+      <div class="form-group" *ngIf="f.type.value == 1">
+        <label for="" class="context">Is Bengal Tiger?</label>
+        <input class="form-check-input form-control" type="checkbox" [(ngModel)]="is_bengal" name="is_bengal">
+      </div>
+      <div class="form-group" *ngIf="f.type.value == 0">
+        <label for="" class="context">Snake length</label>
+        <input    type="number" 
+                  formControlName="length" 
+                  class="form-control" 
+                  placeholder="length"
+                  [ngClass]="{ 'is-invalid': submitted && f.length.errors }"
+                  required>
+      </div>
       <div class="row">
         <button class="btn btn-lg btn-primary btn-block">Submit</button>
       </div>
