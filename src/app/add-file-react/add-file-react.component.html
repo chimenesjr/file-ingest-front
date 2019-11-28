@@ -40,7 +40,7 @@
       </div>
       <div class="form-group" *ngIf="f.type.value == 1">
         <label for="" class="context">Is Bengal Tiger?</label>
-        <input class="form-check-input form-control" type="checkbox" [(ngModel)]="is_bengal" name="is_bengal">
+        <input class="form-check-input form-control" type="checkbox" formControlName="is_bengal">
       </div>
       <div class="form-group" *ngIf="f.type.value == 0">
         <label for="" class="context">Snake length</label>
@@ -49,7 +49,7 @@
                   class="form-control" 
                   placeholder="length"
                   [ngClass]="{ 'is-invalid': submitted && f.length.errors }"
-                  required>
+                  value="0">
       </div>
       <div class="row">
         <button class="btn btn-lg btn-primary btn-block">Submit</button>

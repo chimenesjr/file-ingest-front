@@ -23,6 +23,7 @@ export class AddFileReactComponent implements OnInit {
       is_bengal: [''],
       length: ['', Validators.pattern("^[0-9]*$")]
     });
+    this.clearForm();
   }
 
   // convenience getter for easy access to form fields
@@ -45,6 +46,7 @@ export class AddFileReactComponent implements OnInit {
     this.fileService.IngestFile(file);
 
     this.clearForm();
+    this.submitted = false;
   }
 
   clearForm(){

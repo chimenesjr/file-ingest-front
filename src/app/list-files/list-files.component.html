@@ -20,8 +20,6 @@
   <div class="col-md-1">{{file.time_to_hold}}</div>
   <div class="col-md-2">
     {{getTypeName(file.type)}}
-    {{file.length}}
-    {{file.is_bengal}}
     {{file.type == 0 ? file.length : ''}}
     {{file.type == 1 ? file.is_bengal : ''}}
   </div>
