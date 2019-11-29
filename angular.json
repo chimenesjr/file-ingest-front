@@ -45,6 +45,14 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "gcp": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.gcp.ts"
+                }
+              ]
             }
           }
         },
@@ -56,6 +64,9 @@
           "configurations": {
             "production": {
               "browserTarget": "file-ingest-front:build:production"
+            },
+            "gcp": {
+              "browserTarget": "file-ingest-front:build:gcp"
             }
           }
         },
