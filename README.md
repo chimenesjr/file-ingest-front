@@ -12,4 +12,4 @@
 
 ## GCP ENV (RUN)
 
-`ng serve --docker --prod --configuration=gcp`
+`ng serve --host 0.0.0.0 --port 8080 --docker --prod --configuration=gcp`
