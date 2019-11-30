@@ -1,5 +1,5 @@
 export const environment = {
-  apiUrl: 'http://localhost',
+  apiUrl: 'https://file-ingest-back-bbsmfpeh3a-uc.a.run.app',
   environmentName: 'gcp',
   production: true
 };
