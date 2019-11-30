@@ -2,6 +2,9 @@
 steps:
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-f', 'Dockerfile-gcp', '-t', 'gcr.io/$PROJECT_ID/file-ingest-front', '.']
-images: ['gcr.io/$PROJECT_ID/file-ingest-front']
+  args: ['build', '-f', 'Dockerfile-gcp', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID', '.']
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID']
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', '--image-url', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID']
+  id: 'Deploy to App Engine'
