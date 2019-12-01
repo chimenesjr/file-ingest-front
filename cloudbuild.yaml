@@ -17,7 +17,7 @@ steps:
           '--region', 'us-central1', 
           '--platform', 'managed', 
           '--allow-unauthenticated',
-          '--memory', '512']
+          '--memory', '512Mi']
   id: 'Deploy to Cloud Run'
 
 # Push to Container Registry
