@@ -6,7 +6,7 @@
 
 3. file-ingest-db
 
-Post two kinds of file to the back-end.
+Posts two kinds of file to the back-end.
 
 
 
